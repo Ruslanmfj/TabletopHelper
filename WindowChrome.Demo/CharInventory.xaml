@@ -1,0 +1,69 @@
+﻿<Window x:Name="CI_MainWindow" x:Class="WindowChrome.Demo.CharInventory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowChrome.Demo"
+        mc:Ignorable="d"
+        Title="Инвентарь персонажа" Height="450" Width="450" WindowStyle="ToolWindow" SizeChanged="CI_MainWindow_SizeChanged" Loaded="CI_MainWindow_Loaded">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid x:Name="CI_MainGrid" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <ImageBrush ImageSource="Background.png"/>
+                </Grid.Background>
+                <DockPanel x:Name="CI_ItemNames" LastChildFill="False" Margin="0">
+                    <Label Content="Наименование" VerticalAlignment="Top" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Background="#FF2E2E36" Foreground="#FFFED3AC" FontStyle="Italic" FontFamily="Book Antiqua" FontSize="16">
+                        <Label.ContextMenu>
+                            <ContextMenu/>
+                        </Label.ContextMenu>
+                    </Label>
+                </DockPanel>
+                <DockPanel x:Name="CI_ItemCounts" LastChildFill="False" Margin="0" Grid.Column="1">
+                    <Label Content="Количество" VerticalAlignment="Top" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Background="#FF2E2E36" Foreground="#FFFED3AC" FontStyle="Italic" FontFamily="Book Antiqua" FontSize="16" Margin="0,0,-1,0"/>
+                </DockPanel>
+                <DockPanel x:Name="CI_ItemWeights" LastChildFill="False" Margin="0" Grid.Column="2">
+                    <Label Content="Вес" VerticalAlignment="Top" DockPanel.Dock="Top" HorizontalContentAlignment="Center" Background="#FF2E2E36" Foreground="#FFFED3AC" FontStyle="Italic" FontFamily="Book Antiqua" FontSize="16" Margin="0,0,-1,0"/>
+                </DockPanel>
+                <GridSplitter Width="5" Margin="0" Background="#FF3F3F46" FlowDirection="RightToLeft"/>
+                <GridSplitter Width="5" Margin="0" Grid.Column="1" Background="#FF3F3F46" FlowDirection="RightToLeft"/>
+            </Grid>
+        </ScrollViewer>
+        <DockPanel x:Name="CI_NewItemGroup" Height="30" LastChildFill="False" Margin="0" VerticalAlignment="Bottom" Background="#FF3F3F46" Width="0">
+            <Border x:Name="CI_ConfurmAddingBorder" BorderBrush="Black" BorderThickness="1" CornerRadius="2" Background="#FF48A644" Margin="5,5,0,5" Width="20">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <Label x:Name="CI_ConfurmAdding" Content="+" FontWeight="Bold" FontFamily="Arial" FontSize="28" Padding="0" VerticalAlignment="Center" Margin="0,-6,0,0" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.65" MouseDown="CI_ConfurmAdding_MouseDown"/>
+            </Border>
+            <TextBox x:Name="CI_ItemName" TextWrapping="Wrap" Text="Название предмета" VerticalAlignment="Top" Width="120" Margin="10,5,0,5" Foreground="#FFD1D188" BorderBrush="{x:Null}" FontFamily="Book Antiqua">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="Background.png"/>
+                </TextBox.Background>
+            </TextBox>
+            <TextBox x:Name="CI_ItemCount" TextWrapping="Wrap" Text="Количество" VerticalAlignment="Top" Width="120" Margin="10,5,0,0" Foreground="#FFD1D188" BorderBrush="{x:Null}" FontFamily="Book Antiqua">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="Background.png"/>
+                </TextBox.Background>
+            </TextBox>
+            <TextBox x:Name="CI_ItemWeight" TextWrapping="Wrap" Text="Вес" VerticalAlignment="Top" Width="120" Margin="10,5,0,0" Foreground="#FFD1D188" BorderBrush="{x:Null}" FontFamily="Book Antiqua">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="Background.png"/>
+                </TextBox.Background>
+            </TextBox>
+        </DockPanel>
+        <Grid Height="20" VerticalAlignment="Bottom" Width="20" Margin="0,0,5,5" HorizontalAlignment="Right">
+            <Grid.Effect>
+                <DropShadowEffect/>
+            </Grid.Effect>
+            <Border x:Name="CI_AddItemBorder" BorderBrush="Black" BorderThickness="1" CornerRadius="2" Background="#FF48A644">
+                <Label x:Name="CI_AddItem" Content="+" FontWeight="Bold" FontFamily="Arial" FontSize="28" Padding="0" VerticalAlignment="Center" Margin="0,-6,0,0" HorizontalContentAlignment="Center" MouseUp="CI_AddItem_MouseUp" RenderTransformOrigin="0.5,0.65"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

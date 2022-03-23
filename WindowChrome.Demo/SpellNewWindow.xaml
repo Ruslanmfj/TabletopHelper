@@ -1,0 +1,88 @@
+﻿<Window x:Class="WindowChrome.Demo.SpellNewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowChrome.Demo"
+        mc:Ignorable="d"
+        Title="SpellNewWindow" Height="609.245" Width="664.911">
+    <Window.Background>
+        <ImageBrush ImageSource="Background.png"/>
+    </Window.Background>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0">
+            <Grid Margin="0">
+                <DockPanel x:Name="SPD" LastChildFill="False" Margin="0">
+                    <DockPanel LastChildFill="False" DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="0,10,0,0">
+                        <Image Height="50" VerticalAlignment="Top" Width="50" Source="TextFrame2.png"/>
+                        <Label x:Name="SL_SpellName" Content="Заклинание" VerticalAlignment="Top" Background="{x:Null}" FontFamily="Book Antiqua" FontSize="36">
+                            <Label.Effect>
+                                <DropShadowEffect Color="Red" ShadowDepth="0" Direction="0" BlurRadius="10"/>
+                            </Label.Effect>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="{DynamicResource MainColor}"/>
+                            </Label.Foreground>
+                        </Label>
+                        <Image Height="50" VerticalAlignment="Top" Width="50" Source="TextFrame.png"/>
+                    </DockPanel>
+                    <Grid DockPanel.Dock="Top" VerticalAlignment="Top" Margin="30,10,30,25">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label x:Name="SL_SpellLevel" Content="Уровень:" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Foreground="#FFFFD4AD" FontFamily="Book Antiqua" FontSize="14"/>
+                        <Image HorizontalAlignment="Left" Height="12" VerticalAlignment="Center" Width="12" Source="Seporator.png" Margin="0"/>
+                        <Label x:Name="SL_SpellSchool" Content="Школа:" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Foreground="#FFFFD4AD" FontFamily="Book Antiqua" Grid.Row="1" FontSize="14"/>
+                        <Image HorizontalAlignment="Left" Height="12" VerticalAlignment="Center" Width="12" Source="Seporator.png" Margin="0" Grid.Row="1"/>
+                        <Label x:Name="SL_SpellDistance" Content="Дистанция:" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Foreground="#FFFFD4AD" FontFamily="Book Antiqua" Grid.Column="1" FontSize="14"/>
+                        <Image HorizontalAlignment="Left" Height="12" VerticalAlignment="Center" Width="12" Source="Seporator.png" Margin="0" Grid.Column="1"/>
+                        <Image HorizontalAlignment="Left" Height="12" VerticalAlignment="Center" Width="12" Source="Seporator.png" Margin="0" Grid.Row="3"/>
+                        <Label x:Name="SL_SpellTime" Content="Длительность:" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Foreground="#FFFFD4AD" FontFamily="Book Antiqua" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                        <Image HorizontalAlignment="Left" Height="12" VerticalAlignment="Center" Width="12" Source="Seporator.png" Margin="0" Grid.Row="1" Grid.Column="1"/>
+                        <Label x:Name="SL_SpellClass" Content="Классы:" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Foreground="#FFFFD4AD" FontFamily="Book Antiqua" Grid.Row="2" FontSize="14"/>
+                        <Image HorizontalAlignment="Left" Height="12" VerticalAlignment="Center" Width="12" Source="Seporator.png" Margin="0" Grid.Row="2"/>
+                        <Label x:Name="SL_SpellSource" Content="Источник:" HorizontalAlignment="Left" Margin="21,0,0,0" VerticalAlignment="Center" Foreground="#FFFFD4AD" FontFamily="Book Antiqua" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+                        <Image HorizontalAlignment="Left" Height="12" VerticalAlignment="Center" Width="12" Source="Seporator.png" Margin="0" Grid.Row="2" Grid.Column="1"/>
+                        <Image HorizontalAlignment="Left" Height="12" VerticalAlignment="Center" Width="12" Source="Seporator.png" Margin="0,10,0,0" Grid.Row="4"/>
+                        <TextBlock x:Name="SL_Spellcasttime" Margin="25,0,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Время накладывания: " VerticalAlignment="Center" FontFamily="Book Antiqua" Grid.ColumnSpan="2" HorizontalAlignment="Left" FontSize="14">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{DynamicResource MainColor}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        <TextBlock x:Name="SL_SpellComponents" Margin="25,10,0,0" Grid.Row="4" TextWrapping="Wrap" Text="Компоненты:" VerticalAlignment="Center" FontFamily="Book Antiqua" Grid.ColumnSpan="2" FontSize="14">
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="{DynamicResource MainColor}"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                    </Grid>
+                    <DockPanel x:Name="SpellDiscription" LastChildFill="False" DockPanel.Dock="Top"/>
+                </DockPanel>
+                <Grid x:Name="SL_SpellCellGrid" HorizontalAlignment="Right" Width="25" Background="#33000000" Margin="4,0,0,0">
+                    <Label x:Name="SL_SpellSchool_Copy" Content="Ячейка заклинания" HorizontalAlignment="Center" Margin="25,0,0,0" VerticalAlignment="Top" Foreground="#FFFFD4AD" FontFamily="Book Antiqua" FontSize="18"/>
+                    <DockPanel LastChildFill="False" Margin="25,42,0,0">
+                        <Label x:Name="SLSpellCell1" Content="1 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF248B13" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                        <Label x:Name="SLSpellCell2" Content="2 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF658B13" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                        <Label x:Name="SLSpellCell3" Content="3 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF708B13" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                        <Label x:Name="SLSpellCell4" Content="4 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF8B8013" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                        <Label x:Name="SLSpellCell5" Content="5 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF8B6A13" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                        <Label x:Name="SLSpellCell6" Content="6 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF8B4F13" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                        <Label x:Name="SLSpellCell7" Content="7 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF8B3F13" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                        <Label x:Name="SLSpellCell8" Content="8 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF8B3913" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                        <Label x:Name="SLSpellCell9" Content="9 уровень" Margin="0" VerticalAlignment="Top" Foreground="Black" FontFamily="Book Antiqua" FontSize="18" DockPanel.Dock="Top" Background="#FF8B2E13" HorizontalContentAlignment="Center" MouseUp="SLSpellCell1_MouseUp"/>
+                    </DockPanel>
+                    <Border BorderThickness="1" Width="25" HorizontalAlignment="Left" MouseUp="SL_SpellCellGrid_MouseUp" Background="#19000000">
+                        <Image x:Name="SL_DotsImage" HorizontalAlignment="Left" Width="25" Source="Dots.png" RenderTransformOrigin="0.5,0.5" StretchDirection="DownOnly" Margin="0" VerticalAlignment="Center"/>
+                    </Border>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

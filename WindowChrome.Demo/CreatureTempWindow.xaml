@@ -1,0 +1,300 @@
+﻿<Window x:Class="WindowChrome.Demo.CreatureTempWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowChrome.Demo"
+        mc:Ignorable="d"
+        Title="CreatureTempWindow" Height="602.463" Width="811.088" Loaded="Window_Loaded">
+    <Grid>
+        <ScrollViewer Margin="0" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer.Background>
+                <ImageBrush ImageSource="Background.png"/>
+            </ScrollViewer.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="398"/>
+                    <ColumnDefinition MinWidth="100"/>
+                </Grid.ColumnDefinitions>
+                <DockPanel x:Name="MC_Discription1" Margin="0" Background="#33B4B0B0">
+                    <Border BorderBrush="Black" BorderThickness="4" Height="10" VerticalAlignment="Top" DockPanel.Dock="Bottom" Background="#FF804000" Margin="0"/>
+                    <Border BorderBrush="Black" BorderThickness="4" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF723307" Offset="0"/>
+                                <GradientStop Color="#FFFFAE00" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Grid Width="10"/>
+                    <Grid Width="10" Margin="0" DockPanel.Dock="Right"/>
+                    <DockPanel LastChildFill="False" Background="#FFDEB074" DockPanel.Dock="Top">
+                        <Image x:Name="MC_Preview" Width="62" Margin="-75,5,0,0" DockPanel.Dock="Right" MinWidth="62" MaxWidth="62" Height="62" HorizontalAlignment="Right" VerticalAlignment="Top" Source="ID01_001.png" MouseUp="MC_Preview_MouseUp" Panel.ZIndex="1"/>
+                        <Label x:Name="MC_Name" Content="Ааракокра" VerticalAlignment="Top" FontSize="20" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0,5,75,0">
+                            <Label.Effect>
+                                <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                            </Label.Effect>
+                        </Label>
+                        <TextBlock x:Name="LinkMain" TextWrapping="Wrap" Text="ссылка" DockPanel.Dock="Right" Margin="-105,-35,0,0" TextDecorations="Underline" ToolTip="Страница на dungeons.su" Cursor="Hand" MouseUp="GoToLink"/>
+                        <Label x:Name="MC_TypeSizeView" Content="Средний гуманойд, Нейтрально-Добрый" VerticalAlignment="Top" FontSize="14" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" FontStyle="Italic" DockPanel.Dock="Top" Margin="0,0,75,5"/>
+                        <Border BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Label x:Name="MC_Armor" Content="Класс доспеха:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top">
+                            <Label.Effect>
+                                <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                            </Label.Effect>
+                        </Label>
+                        <DockPanel LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top" MinHeight="30" MaxHeight="30" Height="30">
+                            <Label Content="Хиты:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label x:Name="MC_Hit" Content="13" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" FontWeight="Bold"/>
+                            <Label x:Name="MC_HitDice" Content="(1d4)" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" FontWeight="Bold"/>
+                            <Image Height="30" Width="30" Source="ReRoll.png" ToolTip="Генерировать ХП"/>
+                        </DockPanel>
+                        <Label x:Name="MC_Speed" Content="Скорость:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top">
+                            <Label.Effect>
+                                <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                            </Label.Effect>
+                        </Label>
+                        <Border BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
+                        <Grid DockPanel.Dock="Top" Margin="0" Height="60" MinHeight="60" MaxHeight="60">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="СИЛ:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" Margin="0" HorizontalContentAlignment="Center" FontWeight="Bold">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label Content="ЛОВ:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="1" Margin="0" FontWeight="Bold">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label Content="ТЕЛ:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="2" Margin="0" FontWeight="Bold">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label Content="ИНТ:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="3" Margin="0" FontWeight="Bold">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label Content="МДР:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="4" Margin="0" RenderTransformOrigin="1.368,0.667" FontWeight="Bold">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label Content="ХАР:" VerticalAlignment="Top" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="5" Margin="0" RenderTransformOrigin="1.368,0.667" FontWeight="Bold">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label x:Name="MC_Sil" Content="20(+5)" VerticalAlignment="Bottom" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label x:Name="MC_Lov" Content="20(+5)" VerticalAlignment="Bottom" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="1" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label x:Name="MC_Tel" Content="20(+5)" VerticalAlignment="Bottom" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="2" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label x:Name="MC_Int" Content="20(+5)" VerticalAlignment="Bottom" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="3" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label x:Name="MC_Mdr" Content="20(+5)" VerticalAlignment="Bottom" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="4" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                            <Label x:Name="MC_Har" Content="20(+5)" VerticalAlignment="Bottom" FontSize="16" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" HorizontalContentAlignment="Center" Grid.Column="5" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                        </Grid>
+                        <Border x:Name="MC_UnderUses" BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top" Cursor="Hand" MouseDown="Border_MouseDown">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Label Content="Навыки" FontFamily="Book Antiqua" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        </Border>
+                        <DockPanel x:Name="MC_Uses" LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top"/>
+                        <Border x:Name="MC_UnderSkills" BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top" MouseUp="Border_MouseDown" Cursor="Hand">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Label Content="Способности" FontFamily="Book Antiqua" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        </Border>
+                        <DockPanel x:Name="MC_Skills" LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top">
+                            <Label x:Name="MC_Name_Copy1" Content="-СПОСОБНОСТИ-" VerticalAlignment="Top" FontSize="18" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                        </DockPanel>
+                        <Border x:Name="MC_UnderActions" BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top" Cursor="Hand" MouseUp="Border_MouseDown">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Label FontFamily="Book Antiqua" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Content="Действия"/>
+                        </Border>
+                        <DockPanel x:Name="MC_Actions" LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top">
+                            <Label x:Name="MC_Name_Copy2" Content="-ДЕЙСТВИЯ-" VerticalAlignment="Top" FontSize="18" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                        </DockPanel>
+                        <Border x:Name="MC_UnderReactions" BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top" Cursor="Hand" MouseUp="Border_MouseDown" d:IsHidden="True">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Label FontFamily="Book Antiqua" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Content="Реакции"/>
+                        </Border>
+                        <DockPanel x:Name="MC_Reactions" LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top" d:IsHidden="True">
+                            <Label x:Name="MC_Name_Copy7" Content="-РЕАКЦИИ-" VerticalAlignment="Top" FontSize="18" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                        </DockPanel>
+                        <Border x:Name="MC_UnderLegendaryActions" BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top" Cursor="Hand" MouseUp="Border_MouseDown" d:IsHidden="True">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Label FontFamily="Book Antiqua" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Content="Легендарные действия"/>
+                        </Border>
+                        <DockPanel x:Name="MC_LegendaryActions" LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top" d:IsHidden="True">
+                            <Label x:Name="MC_Name_Copy3" Content="-ЛЕГЕНДАРНЫЕ ДЕЙСТВИЯ-" VerticalAlignment="Top" FontSize="18" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                        </DockPanel>
+                        <Border x:Name="MC_UnderCeep" BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top" Cursor="Hand" MouseUp="Border_MouseDown" d:IsHidden="True">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Label FontFamily="Book Antiqua" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Content="Логово"/>
+                        </Border>
+                        <DockPanel x:Name="MC_Ceep" LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top" d:IsHidden="True">
+                            <Label x:Name="MC_Name_Copy4" Content="-ЛОГОВО-" VerticalAlignment="Top" FontSize="18" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                        </DockPanel>
+                        <Border x:Name="MC_UnderCeepAction" BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top" Cursor="Hand" MouseUp="Border_MouseDown" d:IsHidden="True">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Label FontFamily="Book Antiqua" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Content="Действия логова"/>
+                        </Border>
+                        <DockPanel x:Name="MC_CeepAction" LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top" d:IsHidden="True">
+                            <Label x:Name="MC_Name_Copy5" Content="-ДЕЙСТВИЯ ЛОГОВА-" VerticalAlignment="Top" FontSize="18" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                        </DockPanel>
+                        <Border x:Name="MC_UnderCeepEffect" BorderBrush="Black" BorderThickness="3" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top" Cursor="Hand" MouseUp="Border_MouseDown" d:IsHidden="True">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF723307" Offset="0"/>
+                                    <GradientStop Color="#FFFFAE00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Label FontFamily="Book Antiqua" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Cursor="Hand" Content="Эффекты логова"/>
+                        </Border>
+                        <DockPanel x:Name="MC_CeepEffect" LastChildFill="False" VerticalAlignment="Top" DockPanel.Dock="Top" d:IsHidden="True">
+                            <Label x:Name="MC_Name_Copy6" Content="-ЭФФЕКТЫ ЛОГОВА-" VerticalAlignment="Top" FontSize="18" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0">
+                                <Label.Effect>
+                                    <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                                </Label.Effect>
+                            </Label>
+                        </DockPanel>
+                    </DockPanel>
+                </DockPanel>
+                <DockPanel x:Name="MC_Discription1_Copy" Margin="0" Background="#33B4B0B0" Grid.Column="1">
+                    <Border BorderBrush="Black" BorderThickness="4" Height="10" VerticalAlignment="Top" DockPanel.Dock="Bottom" Background="#FF804000" Margin="0"/>
+                    <Border BorderBrush="Black" BorderThickness="4" Height="10" VerticalAlignment="Top" DockPanel.Dock="Top">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF723307" Offset="0"/>
+                                <GradientStop Color="#FFFFAE00" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Grid Width="10" Margin="0"/>
+                    <Grid Width="10" Margin="0" DockPanel.Dock="Right"/>
+                    <DockPanel x:Name="DisckDock" LastChildFill="False" Background="#FFDEB074" DockPanel.Dock="Top">
+                        <Border x:Name="MC_BlckDiscr" BorderBrush="#FF573B16" BorderThickness="6,3" DockPanel.Dock="Top" Margin="5" CornerRadius="5" Visibility="Collapsed">
+                            <TextBlock x:Name="MC_BlockDiscription" TextWrapping="Wrap" Text="TextBlock" Margin="5"/>
+                        </Border>
+                        <Label x:Name="MC_DiscrLabel" Content="-ОПИСАНИЕ-" VerticalAlignment="Top" FontSize="18" BorderBrush="Red" Foreground="Black" FontFamily="Book Antiqua" DockPanel.Dock="Top" Margin="0" HorizontalContentAlignment="Center">
+                            <Label.Effect>
+                                <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="10" Color="#FFC50000"/>
+                            </Label.Effect>
+                        </Label>
+                        <Grid DockPanel.Dock="Top"/>
+                        <TextBlock x:Name="MC_Dicsription" TextWrapping="Wrap" DockPanel.Dock="Top"/>
+                    </DockPanel>
+                </DockPanel>
+                <GridSplitter HorizontalAlignment="Left" Width="5" Grid.Column="1" Background="Black" Margin="0,15"/>
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</Window>

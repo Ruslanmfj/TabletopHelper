@@ -1,0 +1,25 @@
+﻿<Window x:Class="WindowChrome.Demo.TextWinow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowChrome.Demo"
+        mc:Ignorable="d"
+        Title="TextWinow" Height="123.056" Width="221.177" WindowStyle="ToolWindow" Background="#FF3F3F46">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Foreground="White">Введите новое значение:</TextBlock>
+        <TextBox x:Name="passwordBox" Grid.Row="1"/>
+
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0,15,0,0">
+            <Button x:Name="Accept" IsDefault="True" Click="Accept_Click" Margin="0,0,10,0" HorizontalAlignment="Left" MinWidth="60">OK</Button>
+            <Button x:Name="Cancel" IsCancel="True" MinWidth="60">Отмена</Button>
+        </WrapPanel>
+
+    </Grid>
+</Window>

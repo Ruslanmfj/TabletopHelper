@@ -1,0 +1,27 @@
+﻿<Window x:Class="WindowChrome.Demo.ImageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowChrome.Demo"
+        mc:Ignorable="d"
+        Title="ImageWindow" WindowStyle="None" HorizontalAlignment="Left" VerticalAlignment="Top" Activated="Window_Activated" AllowsTransparency="True" Background="{x:Null}" Width="507">
+    <Grid Margin="0" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="450*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="ImageFull" Source="BardFull.png" Margin="0" Grid.Row="1"/>
+        <Image HorizontalAlignment="Right" Height="25" VerticalAlignment="Top" Width="25" Source="Colse.png" MaxWidth="25" MaxHeight="25" MinWidth="25" MinHeight="25" MouseUp="Image_MouseUp" Margin="0" Panel.ZIndex="1">
+            <Image.Effect>
+                <DropShadowEffect Color="#FFEC0000" BlurRadius="10" Direction="0" ShadowDepth="0"/>
+            </Image.Effect>
+        </Image>
+        <Image Margin="0" Source="Background.png" Stretch="Fill" MouseDown="Image_MouseDown"/>
+        <Label x:Name="Name" Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFFFF091" FontSize="14" Height="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,-2,0,0">
+            <Label.Effect>
+                <DropShadowEffect Color="Red" Direction="0" ShadowDepth="0"/>
+            </Label.Effect>
+        </Label>
+    </Grid>
+</Window>

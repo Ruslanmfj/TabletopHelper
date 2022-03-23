@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B9FA078-AB53-402A-ACDE-080202708569}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowChrome.Demo</RootNamespace>
+    <AssemblyName>WindowChrome.Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CharInventory.xaml.cs">
+      <DependentUpon>CharInventory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatureTempWindow.xaml.cs">
+      <DependentUpon>CreatureTempWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HPGenerateModalWindow.xaml.cs">
+      <DependentUpon>HPGenerateModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImageWindow.xaml.cs">
+      <DependentUpon>ImageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingWindow.xaml.cs">
+      <DependentUpon>LoadingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SM_LoadWindow.xaml.cs">
+      <DependentUpon>SM_LoadWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpellNewWindow.xaml.cs">
+      <DependentUpon>SpellNewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Styles\VS2012\VS2012WindowStyle.cs" />
+    <Compile Include="TextWinow.xaml.cs">
+      <DependentUpon>TextWinow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CharInventory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreatureTempWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HPGenerateModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="SM_LoadWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpellNewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\VS2012\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\VS2012\VS2012WindowStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TextWinow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="19019.ttf" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="..\Whush.Demo\mainicon.ico">
+      <Link>mainicon.ico</Link>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MainLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TopbarBackground3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ToolsIdle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ToolsHold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Colse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GenerateNPCIdle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Maximaize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TextFrame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="TextFrame2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Barbarian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cleric.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Druid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Monk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Paladin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ranger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Rouge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sorcerer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Warlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Warrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Wizzard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StreinghtChar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StatBorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Roll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GenerateIdle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GenerateHold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BorderBTY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ColoredPaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PaperBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ReRoll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ID01_001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ID01_001_Full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BardFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BarbarianFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ClericFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DruidFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FighterFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MonkFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PaladinFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RangerFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SocorerFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WarlockFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="WizzardFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RogueFull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ArrowUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="More_Unpassed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MorePassed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CharBorder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Seporator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ramka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Arm36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Chest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Brain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SpellBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GNPC_Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GNPC_SavePassed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NPCG_BM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NPCG_FlySpeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Dots2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PlayAudio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StopAudio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bez_imeni-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LoadLogoStatic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LoadLogoDunamic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="unnamed %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DungeonMap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="33848.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="BackArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Brotherhood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CP_Map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CP_info.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
